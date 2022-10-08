@@ -1,0 +1,67 @@
+Description
+
+Everyone dreams of making money, but although making money and having a steady income is fun, paying taxes is not fun. We live in a country (or a region 😏, based on your political preference) that adopts a progressive tax system, where the tax rate increases as the taxable amount increases.
+The table below shows the tax rate ranges (tax brackets) in Taiwan:
+
+綜合所得淨額		乘法	稅率
+0~540,000		x	5%
+540,001~1,210,000	x	12%
+1,210,001~2,420,000	x	20%
+2,420,001~4,530,000	x	30%
+4,530,001~以上		x	40%
+
+From National Taxation Bureau of Taipei, Ministry of Taiwan
+The first column indicates the taxable income, where the third column shows the tax rates of the respective income range. For example, if you have a total income of NTD\$600,000, then you'll have to pay $540,000 x 5% + ($600,000 - $540,000) x 12% = $34,200 in total.
+Given the tax brackets of a country, can you calculate how much tax a person should pay according to one's income?
+
+
+Input
+On the first line there is an integer N, indicating how many ranges there are.
+N lines follow, on each line there are two numbers ai & ri, where ai is an integer indicating the least value of this range and ri is a floating point number indicating the tax rate of this bracket.
+On the next line, there is one integer M indicating the number of people.
+The next M lines each gives one integer ik, which is the income of the k-th person.
+
+Constraints:
+0<N≤10^3
+0≤ai<aj≤10^9, ∀i<j
+0<ri<rj<1, ∀i<j
+0<M≤10^4
+0≤ik≤10^9
+
+
+Output
+Print out the amount of tax one should pay according to each income ik.
+You should round the answer to two decimal places.
+
+
+Sample Input 1 
+5
+1 0.05
+540001 0.12
+1210001 0.2
+2420001 0.3
+4530001 0.4
+3
+1
+600000
+426410
+
+Sample Output 1
+0.05
+34200.00
+21320.50
+
+Sample Input 2 
+3
+1 0.4
+101 0.45
+501 0.55
+3
+1
+10
+100
+
+Sample Output 2
+0.40
+4.00
+40.00

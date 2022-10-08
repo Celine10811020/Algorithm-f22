@@ -1,12 +1,15 @@
+//PAC
+
 #include <stdio.h>
 #include <stdlib.h>
 
 void mergeSort(int *queue, int head, int tail);
 void merge(int *queue, int head, int mid, int tail);
+void insertSort(int *queue, int head, int tail, int times);
 
 int main()
 {
-    int i, num, queueNum, temp, home, end, remain=0;
+    int i, num, queueNum, temp, home, end, remain, times=0;
     int *queue = NULL;
     int **queries = NULL;
 
@@ -35,10 +38,12 @@ int main()
 
 //printf("queueNum=%d\n", queueNum);
     queue = (int*)malloc(sizeof(int)*queueNum);
-
-    home = 0;
-    end = 0;
-    remain = 0;
+    temp = 0;
+    home = 0; //块竚Last In
+    end = 0; //程秨﹍竚First Out
+    remain = 0; //queueいΤ碭计
+    times = 0; //Τ碭计非称惠璶秈︽sort
+    //queueFIFO
     for(i=0; i<num; i++)
     {
         if(queries[i][0] == 1)
@@ -46,9 +51,11 @@ int main()
 //printf("comman 1\n");
             queue[home] = queries[i][1];
 //printf("queue[%d]=%d\n", home, queue[home]);
-            home++;
+            home++; //块竚++
 //printf("home=%d\tend=%d\n", home, end);
-            remain++;
+            remain++; //queueい计++
+            temp = 1; //惠璶秈︽sort
+            times ++; //ゼ逼计++
         }else if(queries[i][0] == 2)
         {
 //printf("comman 2\n");
@@ -58,7 +65,19 @@ int main()
 {
     printf("%d ", queue[j]);
 }*/
-            mergeSort(queue, end, home-1);
+            if(temp == 1) //狦⊿Τ块穝计碞ぃ惠璶秈︽sort
+            {
+                if(times<30 && remain>1) //计秖30insertion sort纔merge sort
+                {
+                    insertSort(queue, end, home, times);
+                }else
+                {
+                    mergeSort(queue, end, home-1);
+                }
+
+            }
+            temp = 0; //ぃ惠璶秈︽sort
+            times = 0; //ゼ逼计耴箂
 //printf("After sorting\n");
 /*for(j=end;j<home; j++)
 {
@@ -67,15 +86,15 @@ int main()
         }else
         {
 //printf("comman 3\n");
-            if(remain == 0)
+            if(remain == 0) //狦queueい⊿Τ狥﹁
             {
                 printf("Oh oh\n");
             }else
             {
 //printf("queue[%d]=%d\n", end, queue[end]);
                 printf("%d\n", queue[end]);
-                end++;
-                remain--;
+                end++; //块竚++
+                remain--; //queueい计--
             }
         }
     }
@@ -92,6 +111,28 @@ int main()
     return 0;
 }
 
+void insertSort(int *queue, int head, int tail, int times)
+{
+    int i, j, k, temp, tmp=0;
+
+    tmp = tail-times-2;
+    if(tmp < 0)
+    {
+        tmp = 0;
+    }
+
+    for(i=tail-1; i>=tail-times-2; i--)
+    {
+        temp = queue[i];
+        j = tail-2;
+        while(temp>queue[j])
+        {
+            queue[j+1] = queue[j];
+            j--;
+        }
+        queue[j+1] = temp;
+    }
+}
 
 void merge(int *queue, int head, int mid, int tail)
 {

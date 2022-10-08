@@ -105,33 +105,3 @@ void mergeSort(int *price, int head, int tail)
         merge(price, head, mid, tail);
     }
 }
-
-
-
-
-/*
-Description
-The store sells nn items. The store manager wants to price each item with the following below.
-There is a price ceiling Pi for each item i (1≤i≤n); that is, the price of the i-th item should not greater than Pi.
-The price of each item should be a unique integer from 1 to n.
-
-Input
-The first line contains an integer n, which is the number of items in the store.
-The second line contains n integers P1, P2, ... Pn, where Pi is the price ceiling of the i-th item.
-
-Constraints:
-1≤n≤2×10^5
-1≤Pi≤10^9
-
-
-Output
-Print the total number of permutations that the store manager can price the items.
-Since the answer might be large, output the answer mod 10^9 + 7
-
-Sample Input 1
-5
-5 5 1 4 3
-
-Sample Output 1
-8
-*/

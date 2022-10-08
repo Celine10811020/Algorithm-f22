@@ -1,0 +1,30 @@
+Description
+
+Once upon a time, the brilliant archaeologist Andy and his team went on a treasure hunt to the Cajaboole Islands. After months of hunting, the team finally got to the location that was marked a red X on the map. Instead of discovering a treasure chest, an ancient stele came into sight. There was a poem carved into it which says,
+Find four stones,
+among those buried in the bones.
+Sum up the weights,
+matching T with no clone,
+the path to the treasure will be shown.
+Simply put, if you can find four stones that weigh T in total, you are granted access to the treasure. Now you have k stones, which weights w1, w2, ... , wk, respectively. As a smart programmer, can you help the team find out the total number of unique combinations of stones that match the statement? If there is no possible combination, outputFeiDooDoo_Zuo_Wei_Men.
+Note that the two combinations are consider different if and only if there exists at least one element with different weights. For example (0, 1, -1, 3) and (1, 3, 0, -1) are consider the same combination.
+
+
+Input
+The first line contains two integers N, T, where N is the total number of stones Andy's team have and T is the target that you are going to make.
+The next line contains N integers w1, w2, ... , wk, indicating the weight of each stone.
+
+Constraints:
+4≤n≤300
+-10^9≤T≤10^9
+-10^9≤wi≤10^9
+
+Output
+Please print the total number of the possible combinations, if there is no possible combination then print FeiDooDoo_Zuo_Wei_Men as shown in the description.
+
+Sample Input 1
+6 0
+0 1 -1 0 -2 2
+
+Sample Output 1
+3

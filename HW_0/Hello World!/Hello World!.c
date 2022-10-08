@@ -15,32 +15,3 @@ int main()
     }
     return 0;
 }
-
-
-/*
-Hello World!
-
-Description
-The classic task to start a programming course.
-
-
-Input
-There will be an integerNon a single line of input, with the value either1or2.
-
-
-Output
-Output NN times of "Hello world!".
-
-
-Sample Input 1
-1
-
-Sample Output 1
-Hello world!
-
-Sample Input 2
-2
-
-Sample Output 2
-Hello world!Hello world!
-*/

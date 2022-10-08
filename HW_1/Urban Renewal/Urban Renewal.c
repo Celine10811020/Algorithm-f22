@@ -11,7 +11,7 @@ int main()
     scanf("%ld", &brick);
 
     cal = (long*)malloc(sizeof(long)*brick);
-    cal[0] = '\0';
+    cal[0] = '\0'; //陣列歸零
 
     for(i=0; i<brick; i++)
     {
@@ -21,6 +21,7 @@ int main()
     sum = brick;
     j = brick - 1;
 
+    //建構式方式
     while(sum < building)
     {
         temp = sum - cal[j] + cal[j]*2;

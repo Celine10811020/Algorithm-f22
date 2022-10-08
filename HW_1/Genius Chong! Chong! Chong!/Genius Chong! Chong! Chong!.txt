@@ -1,0 +1,81 @@
+Description
+
+A new plan of the TV show, Genius Chong Chong Chong, is coming. The program producer invites audiences to join the event. Nai Bro, the host of the TV show, plans to split audiences into four groups A, B, C, and D, according to their rating scores in four categories: height, weight, IQ, and EQ:
+	Those who score highest in height out of all categories are assigned to group A.
+	Those who score highest in weight out of all categories are assigned to group B.
+	Those who score highest in IQ out of all categories are assigned to group C.
+	Those who score highest in EQ out of all categories are assigned to group D.
+We know that Nai Bro sorts the audiences according to the highest score of the four, but we will use these figures again to determine rankings within groups. For each group, we define its own ordering O to decide which score comes first when sorting. For example, if the ordering of group A is OA = "IWHE", the group members' ranking is determined by comparing their IQ score first, and then by comparing their weight score, height score, and EQ score sequentially.
+
+For every two audiences in the same group, the following rules of sorting is applied one by one until they can decide who comes first in the rankings:
+	If their first category score is different, the one with a higher score is ranked higher.
+	If their second category score is different, the one with a higher score is ranked higher.
+	If their third category score if different, the one with a higher score is ranked higher.
+	If their fourth category score is different, the one with a higher score is ranked higher.
+	If all four scores are identical, to make it neat, the audience with a name lexicographically lower will be placed ahead in the list.
+Given the four scores of all audiences, you are asked to display the rankings of each group.
+
+
+Input
+The first line consists of an integer NN as the number of audiences.
+The second line gives the ordering string of the four groups, OA, OB, OC, OD. The ordering will be represented by a permutation string of H, W, I, and E, which represents height, weight, IQ, and EQ, respectively.
+The following NN lines give the name Ai and the four scores Hi, Wi, Ii, Ei of each audience. Names are alphabetical strings.
+
+Constraints:
+0≤N≤10^6
+OA[0] = 'H', OB[0] = 'W', OC[0] = 'I', OD[0] = 'E'
+|Ai|≤20, and it is guaranteed that the name of each audience is unique.
+0≤Hi, Wi, Ii, Ei≤10^9, and it is guaranteed that all four scores of an audience are unique.
+
+Output
+The output follows the following format.
+	Group A:
+	<Rank First Audience Name>
+	...
+	<Rank Last Audience Name>
+	Group B:
+	<Rank First Audience Name>
+	...
+	<Rank Last Audience Name>
+	Group C:
+	<Rank First Audience Name>
+	...
+	<Rank Last Audience Name>
+	Group D:
+	<Rank First Audience Name>
+	...
+	<Rank Last Audience Name>
+If there is no audience in a particular group, outputNo Audiencebehind the group title. For example:
+	...
+	Group B: No Audience
+	Group C:
+	...
+
+
+Sample Input 1 
+9
+HWIE WIHE IEHW EIWH
+Harry 10 6 4 9
+Ron 10 6 4 0
+Hermione 10 6 9 0
+Neville 10 7 3 2
+Lee 9 8 7 6
+Cho 4 6 8 3
+Draco 0 1 9 10
+Vincent 0 4 2 9
+Gregory 0 4 2 9
+
+Sample Output 1
+Group A:
+Neville
+Hermione
+Harry
+Ron
+Lee
+Group B: No Audience
+Group C:
+Cho
+Group D:
+Draco
+Gregory
+Vincent

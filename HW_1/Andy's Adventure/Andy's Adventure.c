@@ -1,3 +1,5 @@
+//TLE的PAC
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -38,7 +40,7 @@ int main()
     return 0;
 }
 
-
+//排列組合（原本完整陣列，nC4後的陣列，陣列起始位置，陣列結束位置，排到第幾層(有幾個)，希望加總的最終數字，一共有幾組答案了，將答案存到另一個二維陣列中）
 void paiLeiZuHe(int *stone, int *arr, int home, int end, int diJiCeng, int sum, int *ans, int *compare)
 {
     int i, j, tmp, key=0;
@@ -58,7 +60,7 @@ void paiLeiZuHe(int *stone, int *arr, int home, int end, int diJiCeng, int sum, 
             {
                 temp[i] = arr[i];
             }
-            for(i=1; i<4; i++)
+            for(i=1; i<4; i++) //insertion sort
             {
                 key = temp[i];
                 j = i - 1;
@@ -82,6 +84,7 @@ void paiLeiZuHe(int *stone, int *arr, int home, int end, int diJiCeng, int sum, 
         return;
     }
 
+    //遞迴
     for(i=home; i<=end && end-i+1 >= 4-diJiCeng; i++)
     {
         arr[diJiCeng] = stone[i];
@@ -89,7 +92,7 @@ void paiLeiZuHe(int *stone, int *arr, int home, int end, int diJiCeng, int sum, 
     }
 }
 
-int comparison(int *compare, int times)
+int comparison(int *compare, int times) //檢查找出來的組合是否有重複
 {
     int i, j, temp;
 
@@ -103,6 +106,7 @@ int comparison(int *compare, int times)
         temp = 0;
         for(i=0; i<4; i++)
         {
+            //二維陣列其實算是一維陣列，第二行、第三行... 是直接接在第一行後面
             if(compare[times*4 + i] == compare[j*4 + i])
             {
                 temp++;
@@ -116,39 +120,3 @@ int comparison(int *compare, int times)
 
     return 0;
 }
-
-
-
-
-/*
-Description
-
-Once upon a time, the brilliant archaeologist Andy and his team went on a treasure hunt to the Cajaboole Islands. After months of hunting, the team finally got to the location that was marked a red X on the map. Instead of discovering a treasure chest, an ancient stele came into sight. There was a poem carved into it which says,
-Find four stones,
-among those buried in the bones.
-Sum up the weights,
-matching T with no clone,
-the path to the treasure will be shown.
-Simply put, if you can find four stones that weigh T in total, you are granted access to the treasure. Now you have k stones, which weights w1, w2, ... , wk, respectively. As a smart programmer, can you help the team find out the total number of unique combinations of stones that match the statement? If there is no possible combination, outputFeiDooDoo_Zuo_Wei_Men.
-Note that the two combinations are consider different if and only if there exists at least one element with different weights. For example (0, 1, -1, 3) and (1, 3, 0, -1) are consider the same combination.
-
-
-Input
-The first line contains two integers N, T, where N is the total number of stones Andy's team have and T is the target that you are going to make.
-The next line contains N integers w1, w2, ... , wk, indicating the weight of each stone.
-
-Constraints:
-4≤n≤300
--10^9≤T≤10^9
--10^9≤wi≤10^9
-
-Output
-Please print the total number of the possible combinations, if there is no possible combination then print FeiDooDoo_Zuo_Wei_Men as shown in the description.
-
-Sample Input 1
-6 0
-0 1 -1 0 -2 2
-
-Sample Output 1
-3
-*/

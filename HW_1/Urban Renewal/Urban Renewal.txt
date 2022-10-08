@@ -1,0 +1,33 @@
+Description
+Sslab city launches a redevelopment plan. One of the significant deficiencies is the cityscape because the specification of bricks is not yet uniform. To improve the cityscape, Sslab City Council introduces the following regulations.
+	The number of bricks of a building should be exactly K.
+	The size of each brick should be the power of two (2^0, 2^1, ...).
+Now, there is a new building plan. The size of the building is N. You should determine if the plan is under regulations or not.
+
+
+Input
+The first line contains two integer N, K. N denotes the size of the building and K denotes the number of bricks in the regulations.
+
+Constraints:
+1≤N≤10^18
+1≤K≤2×10^5
+ 
+
+Output
+If you can design a building that follows the regulations, printYESand print all bricks you use in your design following the newline character. If there is more than one answer, print any combinations.
+If there is no answer, print NO.
+
+
+Sample Input 1 
+12 6
+
+Sample Output 1
+YES
+2 2 2 2 2 2
+
+
+Sample Input 2 
+10 1
+
+Sample Output 2
+NO
