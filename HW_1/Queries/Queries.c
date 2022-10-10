@@ -1,5 +1,3 @@
-//TLE的PAC
-
 #include <stdio.h>
 #include <stdlib.h>
 
