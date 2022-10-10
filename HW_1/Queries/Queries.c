@@ -1,15 +1,14 @@
-//PAC
+//TLEçš„PAC
 
 #include <stdio.h>
 #include <stdlib.h>
 
 void mergeSort(int *queue, int head, int tail);
 void merge(int *queue, int head, int mid, int tail);
-void insertSort(int *queue, int head, int tail, int times);
 
 int main()
 {
-    int i, num, queueNum, temp, home, end, remain, times=0;
+    int i, num, queueNum, temp, home, end, remain=0;
     int *queue = NULL;
     int **queries = NULL;
 
@@ -36,70 +35,34 @@ int main()
         }
     }
 
-//printf("queueNum=%d\n", queueNum);
     queue = (int*)malloc(sizeof(int)*queueNum);
-    temp = 0;
-    home = 0; //¿é¤Jªº¦ì¸m¡]Last In¡^
-    end = 0; //³Ì¶}©lªº¦ì¸m¡]First Out¡^
-    remain = 0; //queue¤¤¦³´X­Ó¼Æ¦r
-    times = 0; //¦³´X­Ó¼Æ¦r·Ç³Æ»İ­n¶i¦æsort
-    //queue¡GFIFO
+    home = 0; //è¼¸å…¥çš„ä½ç½®ï¼ˆLast Inï¼‰
+    end = 0; //æœ€é–‹å§‹çš„ä½ç½®ï¼ˆFirst Outï¼‰
+    remain = 0; //queueä¸­æœ‰å¹¾å€‹æ•¸å­—
+    //queueï¼šFIFO
     for(i=0; i<num; i++)
     {
         if(queries[i][0] == 1)
         {
-//printf("comman 1\n");
             queue[home] = queries[i][1];
-//printf("queue[%d]=%d\n", home, queue[home]);
-            home++; //¿é¤J¦ì¸m++
-//printf("home=%d\tend=%d\n", home, end);
-            remain++; //queue¤¤¼Æ¦r++
-            temp = 1; //»İ­n¶i¦æsort
-            times ++; //¥¼±Æ¦C¼Æ¦r++
+            home++; //è¼¸å…¥ä½ç½®++
+            remain++; //queueä¸­æ•¸å­—++
         }else if(queries[i][0] == 2)
         {
-//printf("comman 2\n");
-//printf("home=%d\tend=%d\n", home, end);
-//printf("Before sorting\n");
-/*for(j=end;j<home; j++)
-{
-    printf("%d ", queue[j]);
-}*/
-            if(temp == 1) //¦pªG¨S¦³¿é¤J·sªº¼Æ¦r¡A´N¤£»İ­n¶i¦æsort
-            {
-                if(times<30 && remain>1) //¼Æ¶q¤p©ó30®É¡Ainsertion sortÀu©ómerge sort
-                {
-                    insertSort(queue, end, home, times);
-                }else
-                {
-                    mergeSort(queue, end, home-1);
-                }
-
-            }
-            temp = 0; //¤£»İ­n¶i¦æsort
-            times = 0; //¥¼±Æ¦C¼Æ¦rÂk¹s
-//printf("After sorting\n");
-/*for(j=end;j<home; j++)
-{
-    printf("%d ", queue[j]);
-}*/
+            mergeSort(queue, end, home-1);
         }else
         {
-//printf("comman 3\n");
-            if(remain == 0) //¦pªGqueue¤¤¨S¦³ªF¦è
+            if(remain == 0) //å¦‚æœqueueä¸­æ²’æœ‰æ±è¥¿
             {
-                printf("Oh oh\n");
+                printf("Oh Oh\n");
             }else
             {
-//printf("queue[%d]=%d\n", end, queue[end]);
                 printf("%d\n", queue[end]);
-                end++; //¿é¥X¦ì¸m++
-                remain--; //queue¤¤ªº¼Æ¦r--
+                end++; //è¼¸å‡ºä½ç½®++
+                remain--; //queueä¸­çš„æ•¸å­—--
             }
         }
     }
-
-
 
     for(i=0; i<num; i++)
     {
@@ -111,28 +74,6 @@ int main()
     return 0;
 }
 
-void insertSort(int *queue, int head, int tail, int times)
-{
-    int i, j, k, temp, tmp=0;
-
-    tmp = tail-times-2;
-    if(tmp < 0)
-    {
-        tmp = 0;
-    }
-
-    for(i=tail-1; i>=tail-times-2; i--)
-    {
-        temp = queue[i];
-        j = tail-2;
-        while(temp>queue[j])
-        {
-            queue[j+1] = queue[j];
-            j--;
-        }
-        queue[j+1] = temp;
-    }
-}
 
 void merge(int *queue, int head, int mid, int tail)
 {
@@ -148,7 +89,6 @@ void merge(int *queue, int head, int mid, int tail)
     {
         leftSub[leftIndex] = queue[head+leftIndex];
     }
-
     for(rightIndex=0; rightIndex<lenB; rightIndex++)
     {
         rightSub[rightIndex] = queue[mid+1+rightIndex];
@@ -157,13 +97,10 @@ void merge(int *queue, int head, int mid, int tail)
     leftSub[lenA] = 0;
     rightSub[lenB] = 0;
 
-
     leftIndex = 0;
     rightIndex = 0;
 
-
     int writePointer=0;
-
     for(writePointer=head; writePointer<=tail; writePointer++)
     {
         if (leftSub[leftIndex] >= rightSub[rightIndex])
