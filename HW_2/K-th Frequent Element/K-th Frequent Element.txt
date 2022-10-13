@@ -1,0 +1,30 @@
+Description
+Given an integer array of size nn, output the kk-th frequent element.
+
+
+Input
+The first line contains two integers, n and k.
+The second line contains nn integers, a1, a2, ... ,an, indicating the given array.
+
+Constraints:
+1≤n≤10^5
+−10^4≤ai≤10^4
+k is in the range[1, the number of unique elements in the array].
+It is guaranteed that the frequency of each element is unique.
+
+
+Output
+Output the k-th frequent element.
+
+
+Sample Input 1 
+6 2
+1 1 1 2 2 3
+
+Sample Output 1
+2
+
+
+Hint
+The frequency of element 1 is 3. The frequency of element 2 is 2. The frequency of element 3 is 1.
+The second frequent element is 2.
