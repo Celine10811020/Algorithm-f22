@@ -1,0 +1,24 @@
+Description
+Given an integer array A (A1, A2, ... , An) of size n, count the number of pairs (Ai, Aj) such that i<j and Ai×Aj is in the given range [L, R].
+
+
+Input
+The first line contains three integers n, L, R, where n is the size of array A, and L and R are the boundaries of the given range.
+The second contains nn integers A1, A2, ... , An, indicating the given array.
+
+Constraints:
+1≤n≤10^5
+1≤L≤R≤10^18
+1≤Ai≤10^9
+ 
+
+Output
+Output the number of pairs (Ai, Aj) such that i<j and Ai×Aj is in the range [L, R].
+
+
+Sample Input 1 
+5 6 14
+1 7 2 4 3
+
+Sample Output 1
+5
