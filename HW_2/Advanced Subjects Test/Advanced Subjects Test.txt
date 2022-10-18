@@ -1,0 +1,33 @@
+Description
+The Advanced Subjects Test (AST) is the nationwide college entrance exam for Taiwanese students. The AST assesses candidates' higher level knowledge of specific subjects and their readiness to study in their selected academic discipline. The AST tests students' comprehension, reasoning, analysis, and ability to effectively communicate. Ten subjects are included in the AST. These include Chinese, English, Mathematics I (for science and engineering majors), Mathematics II (for humanities and social science majors), Geography, History, Physics, Chemistry, Biology, and Civics. Each subject test is worth 100 points.
+Department of Computer Science, National Yang Ming Chiao Tung University, adopts the following rules to decide the admission order.
+Use the scores of the five subjects (Chinese, English, Mathematics I, Physics, and Chemistry). Students are ranked by the sum of the five scores.
+The one who scores higher will be placed ahead in the list.
+
+
+Input
+The first line contains an integer nn, which is the number of students.
+Each of the following nn lines gives five scores Ci, Ei, Mi, Pi, Ki, which represent the scores of Chinese, English, Mathematics I, Physics, and Chemistry of i-th students, respectively.
+
+Constraints:
+1≤n≤10^7
+0≤Ci, Ei, Mi, Pi, Ki≤100
+Memory: 30 MB
+
+Output
+Output the sum of the five scores in admission order (i.e., in non-ascending order).
+
+Sample Input 1 
+5
+85 91 75 97 81
+80 62 75 80 80
+85 91 60 70 94
+80 62 75 80 80
+59 80 84 90 85
+
+Sample Output 1
+429
+400
+398
+377
+377
