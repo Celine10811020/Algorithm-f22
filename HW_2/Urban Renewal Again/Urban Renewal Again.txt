@@ -1,0 +1,30 @@
+Description
+Sslab City launches a redevelopment plan through the contract construction. It is possible for an organization to subcontract parts of a construction project to another organization with the necessary qualifications.
+Sslab City plans to rebuild a region of size nn, where nn is power of two. We divide the region into nn units and number each unit from 1 to n.
+Now, NYCU Construction Company undertakes the project. The company wants to complete the project at the lowest possible cost. It has two ways to complete the project, so do other organizations:
+
+Whenever an organization undertakes a region of at least size 2, it can divide it into two equal halves and subcontract them to two other organizations, respectively, with the cost of the region being the sum of the two subregions, or
+To rebuild the region by itself. If there are no buildings in the region, it costs A to finish; otherwise, it costs B×nb×s, where nb is the number of buildings in the region and s is the size of the region.
+
+
+Input
+The first line contains four integers nn, k, A, and B, where n is the size of whole region and k is the number of buildings in this region.
+The second line contains kk integers b1, b2, ... , bk, where bi is the serial number of unit where the i-th building is located. Notice that each unit may contain more than one building, but each building is located in only a unit.
+
+Constraints:
+2≤n≤2^30, where n is power of two.
+1≤k≤10^5
+1≤A,B≤10^4
+1≤bi≤n
+
+
+Output
+Output the lowest possible cost needed for NYCU Construction Company to complete the whole construction project.
+
+
+Sample Input 1 
+4 2 1 2
+1 3
+
+Sample Output 1
+6
