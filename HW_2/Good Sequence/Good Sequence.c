@@ -1,4 +1,5 @@
 //TLE的PAC
+//C
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,8 +38,8 @@ int main()
 
 long goodSequence(long left, long right)
 {
-    long i, j, k/*, temp*/;
-    long /*median,*/ minNum;
+    long i, j, k;
+    long minNum;
     long one, two;
     long sequenceNum = right-left+1;
     long mid = (left+right) / 2;
@@ -47,6 +48,7 @@ long goodSequence(long left, long right)
     {
         //leftNumSame
         one = goodSequence(mid+1, right);
+        
         j=0;
         for(i=left; i<=mid; i++)
         {
@@ -62,7 +64,7 @@ long goodSequence(long left, long right)
         }
         
         k=j-1;
-        for(i=0; i<k; i++)
+        for(i=0; i<k; i++) //abs(an-median)+abs(a1-median) == abs(an-a1)
         {
             one = one + abs(arr[k]-arr[i]);
             k--;
@@ -70,6 +72,7 @@ long goodSequence(long left, long right)
 
         //rightNumSame
         two = goodSequence(left, mid);
+        
         j=0;
         for(i=mid+1; i<=right; i++)
         {
@@ -134,10 +137,8 @@ void insertionSort(long num)
     }
 }
 
-
 long leftSub[500001];
 long rightSub[500001];
-
 void merge(long head, long mid, long tail)
 {
     long lenA = mid - head + 1;
