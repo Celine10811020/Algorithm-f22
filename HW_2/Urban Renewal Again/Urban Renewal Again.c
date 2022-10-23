@@ -1,3 +1,6 @@
+//C
+//TLE的AC
+
 #include <stdio.h>
 #include <stdlib.h>
 
