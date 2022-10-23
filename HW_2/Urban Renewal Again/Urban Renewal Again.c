@@ -1,5 +1,5 @@
 //C
-//TLE的AC
+//TLE的PAC
 
 #include <stdio.h>
 #include <stdlib.h>
