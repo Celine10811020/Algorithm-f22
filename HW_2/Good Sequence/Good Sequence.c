@@ -1,10 +1,11 @@
-//有WA和TLE的PAC
+//TLE的PAC
 
 #include <stdio.h>
 #include <stdlib.h>
 
 void mergeSort(long head, long tail);
 void merge(long head, long mid, long tail);
+void insertionSort(long num);
 long goodSequence(long left, long right);
 
 long sequence[2000000];
@@ -36,16 +37,14 @@ int main()
 
 long goodSequence(long left, long right)
 {
-    long i, j, temp;
-    long median, minNum;
+    long i, j, k/*, temp*/;
+    long /*median,*/ minNum;
     long one, two;
     long sequenceNum = right-left+1;
-    long mid = left + (sequenceNum)/2 - 1;
-//printf("left: %ld, right: %ld, sequenceNum: %ld\n", left, right, sequenceNum);
+    long mid = (left+right) / 2;
 
     if(sequenceNum > 4)
     {
-printf("sequenceNum > 4\n");
         //leftNumSame
         one = goodSequence(mid+1, right);
         j=0;
@@ -54,21 +53,19 @@ printf("sequenceNum > 4\n");
             arr[j] = sequence[i];
             j++;
         }
-        mergeSort(0, j-1);
-        temp = j/2 - 1;
-        /*if(j%2 == 0)
+        if(j<30)
         {
-            median = arr[temp];
-printf("medianOfLeft: %ld\n", median);
-        }else*/
+            insertionSort(j);
+        }else
         {
-            median = arr[temp];
-printf("medianOfLeft: %ld\n", median);
+            mergeSort(0, j-1);
         }
-
-        for(i=left; i<=mid; i++)
+        
+        k=j-1;
+        for(i=0; i<k; i++)
         {
-            one = one + abs(sequence[i] - median);
+            one = one + abs(arr[k]-arr[i]);
+            k--;
         }
 
         //rightNumSame
@@ -79,21 +76,19 @@ printf("medianOfLeft: %ld\n", median);
             arr[j] = sequence[i];
             j++;
         }
-        mergeSort(0, j-1);
-        temp = j/2 - 1;
-        /*if(j%2 == 0)
+        if(j<30)
         {
-            median = arr[temp];
-printf("medianOfRight: %ld\n", median);
-        }else*/
+            insertionSort(j);
+        }else
         {
-            median = arr[temp];
-printf("medianOfRight: %ld\n", median);
+            mergeSort(0, j-1);
         }
 
-        for(i=mid+1; i<=right; i++)
+        k=j-1;
+        for(i=0; i<k; i++)
         {
-            two = two + abs(sequence[i] - median);
+            two = two + abs(arr[k]-arr[i]);
+            k--;
         }
 
         minNum = one;
@@ -101,12 +96,10 @@ printf("medianOfRight: %ld\n", median);
         {
             minNum = two;
         }
-//printf("leftNumSame: %ld, rightNumSame: %ld, min: %ld\n", one, two, minNum);
         return minNum;
 
     }else if(sequenceNum == 4)
     {
-//printf("sequenceNum == 4\n");
         //leftNumSame
         one = abs(sequence[left+1] - sequence[left]);
 
@@ -118,12 +111,29 @@ printf("medianOfRight: %ld\n", median);
         {
             minNum = two;
         }
-//printf("leftNumSame: %ld, rightNumSame: %ld, min: %ld\n", one, two, minNum);
         return minNum;
     }
 
     return 0;
 }
+
+void insertionSort(long num)
+{
+    long i, j, temp;
+
+    for (i=1; i<num; i++)
+    {
+        temp = arr[i];
+        j = i - 1;
+        while(temp<arr[j] && j>=0)
+        {
+        arr[j+1] = arr[j];
+        j--;
+        }
+        arr[j+1] = temp;
+    }
+}
+
 
 long leftSub[500001];
 long rightSub[500001];
