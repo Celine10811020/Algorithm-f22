@@ -32,9 +32,9 @@ int main()
     }
 
     mergeSort(0, data[1]-1);
-
+    
     ans = cost(1, data[0]);
-
+    
     printf("%ld", ans);
 
     return 0;
@@ -51,7 +51,7 @@ long cost(long left, long right)
     long buildingNum = upperBoundNum - lowerBoundNum + 1;
     long mid = left + (right-left)/2;
 
-    if(right-left+1 > 2)
+    if(right-left+1 > 2) //size > 2
     {
         one = cost(left, mid) + cost(mid+1, right);
         if(buildingNum > 0)
@@ -70,9 +70,11 @@ long cost(long left, long right)
 
         return minNum;
 
-    }else if(right-left+1 == 2)
+    }else if(right-left+1 == 2) //size == 1
     {
         one = cost(left, mid) + cost(mid+1, right);
+        
+        //自己公司建設，假設並無分割
         if(buildingNum > 0)
         {
             two = data[3] * 2 * buildingNum;
@@ -81,6 +83,7 @@ long cost(long left, long right)
             two = data[2];
         }
 
+        //自己公司建設，假設有分割成兩小區塊
         if(buildingNum > 0)
         {
             three = buildingNum*data[3];
@@ -88,7 +91,6 @@ long cost(long left, long right)
         {
             three = data[2];
         }
-
         if(buildingNum > 0)
         {
             three = three + buildingNum*data[3];
@@ -109,7 +111,7 @@ long cost(long left, long right)
 
         return minNum;
 
-    }else
+    }else //size == 1 
     {
         if(buildingNum > 0)
         {
