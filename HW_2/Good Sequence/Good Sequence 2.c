@@ -1,11 +1,8 @@
-//TLE的PAC，只比C的快0.5秒
 //C++
 
 #include <cstdio>
 #include <stdlib.h>
-#include <algorithm>
-#include <vector>
-using namespace std;
+#include <algorithm> //for nth_element()
 
 #define min(a,b) ((a) < (b) ? (a) : (b))
 
@@ -16,7 +13,6 @@ long goodSequence(long left, long right);
 
 long sequence[2000000];
 long arr[1000000];
-//vector<long> arr;
 
 int main()
 {
@@ -44,8 +40,7 @@ int main()
 
 long goodSequence(long left, long right)
 {
-    long i, j, k, temp;
-    //long minNum;
+    long i, j, temp;
     long one, two;
     long sequenceNum = right-left+1;
     long mid = (left+right) / 2;
@@ -54,26 +49,20 @@ long goodSequence(long left, long right)
     {
         //leftNumSame
         one = goodSequence(mid+1, right);
+        
         j=0;
         for(i=left; i<=mid; i++)
         {
             arr[j] = sequence[i];
             j++;
         }
-        /*temp = mid-left+1;
-        std::copy(sequence + left, sequence + left+temp, arr);*/
-        for(i=0; i<temp; i++)
+        
+        temp = j/2;
+        std::nth_element(arr, arr+temp, arr+j); //找出arr中第temp小的數（中位數）
+        
+        for(i=0; i<j; i++)
         {
-            printf("%d\t", arr[i]);
-        }
-        printf("\n");
-        std::sort(arr, arr+temp);
-
-        k=j-1;
-        for(i=0; i<k; i++)
-        {
-            one = one + abs(arr[k]-arr[i]);
-            k--;
+            one = one + abs(arr[i]-arr[temp]);
         }
 
         //rightNumSame
@@ -84,13 +73,13 @@ long goodSequence(long left, long right)
             arr[j] = sequence[i];
             j++;
         }
-        std::sort(arr, arr+right-mid);
+        
+        temp = j/2;
+        std::nth_element(arr, arr+temp, arr+j);
 
-        k=j-1;
-        for(i=0; i<k; i++)
+        for(i=0; i<j; i++)
         {
-            two = two + abs(arr[k]-arr[i]);
-            k--;
+            two = two + abs(arr[i]-arr[temp]);
         }
         
         return min(one, two);
