@@ -1,0 +1,22 @@
+Description
+There is a person on an m×n grid. The starting point is always located at the top-left corner, and the destination is always located at the bottom-right corner. The person tries to move from the starting point to the destination corner. The person can only move either down or right.Given the two integers mm and nn, calculate the number of all possible paths that the person is able to reach the destination.
+Since the answer might be very large, please output the answer modulo 10^8 + 7
+
+
+Input
+The input contains two integers, M and N, where M and N are the row and the column of the grid, respectively.
+
+Constraints:
+1≤M≤1000
+1≤N≤1000
+
+
+Output
+Output the number of all possible paths that the person is able to reach the destination.
+
+
+Sample Input 1 
+3 7
+
+Sample Output 1
+28
