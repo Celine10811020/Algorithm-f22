@@ -1,0 +1,32 @@
+Description
+Tim is a stock investor. He calculates the revenue from stocks every month.
+However, investing must be risky, it is possible that he loses money because of investment failure.
+Thus, Tim would like to calculate how much he earned or lost the most in consecutive months.
+
+
+Input
+The first line contains a number N, indicating the number of months he has invested for.
+The second line gives N integers r1, r2, ⋯, rN, being Tim's revenue from the first month to the Nth month respectively.
+
+Constraints:
+1≤N≤20000
+−9999≤ri≤9999 ∀i∈[1,N]
+
+
+Output
+Output the maximum absolute amount Tim earned or lost in consecutive months.
+
+
+Sample Input 1 
+5
+1 -3 2 3 -4
+
+Sample Output 1
+5
+
+Sample Input 2 
+6
+2 -5 1 -4 3 -2
+
+Sample Output 2
+8
