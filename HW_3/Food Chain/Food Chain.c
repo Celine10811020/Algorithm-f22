@@ -1,3 +1,6 @@
+//TLE的PAC
+//如果建構二元數是用遞迴，應該可以AC
+
 #include <stdio.h>
 
 int buildTree(int start, int end);
