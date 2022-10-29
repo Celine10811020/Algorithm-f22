@@ -1,0 +1,39 @@
+Description
+In nature, there exists a food chain in which a predator preys on at most two species. As the population of a species increases, the natural enemies of the species are gradually afraid of preying on the species. If the population of a species is more than that of its natural enemies, the natural enemies will give up to prey on them. We say that is a strange situation.
+Given the food chain with the id of each species and the population of each species, can you calculate the number of strange situations that occurred?
+Note that the food chain is presented in the post-order and in-order representations, respectively.
+
+
+Input
+The first line gives an integer N as the number of species in the food chain.
+The second line gives N integers a1, a2, aN, ⋯, aN, with ai being the population of the species and i the id of the species.
+The third line gives N integers as the in-order representation of the food chain.
+The fourth line gives N integers as the post-order representation of the food chain.
+
+Constraints:
+1≤N≤2×10^6
+1≤ai≤10^9 ∀i∈[1,N]
+Both in-order and post-order representations are permutations of 1 to N, and it is guaranteed that the hierarchy could be constructed from the two representations.
+
+
+Output
+Print the number of the strange situations that occurred.
+
+
+Sample Input 1 
+7
+10 3 7 4 5 6 8
+4 2 5 1 6 3 7
+4 5 2 6 7 3 1
+
+Sample Output 1
+3
+
+Sample Input 2 
+5
+50 20 40 10 30
+1 2 3 4 5
+5 4 3 2 1
+
+Sample Output 2
+2
