@@ -1,0 +1,39 @@
+Description
+We often buy snacks or drinks from vending machines with coins. We know that a vending machine gives change back if the value of coins that the vending machine takes is greater than the price of the product. Can you calculate the least total number of coins that the vending machine needs to give back?
+
+
+Input
+The first line gives an integer N, indicating the number of different coin values in the currency.
+The second line gives the values of the coins C1, C2, ⋯, CN.
+The third line gives the number of customers Q, who buy things from the vending machine.
+In the following Q lines, each line gives information about the transaction that a customer will make. Each line gives N+1 numbers, starting with a number B, which indicates the total amount of the transaction, followed by NNintegers P1, P2,⋯ , PN, which indicate the number of N different coins the customer will put in the machine, respectively (i.e., how the customer will pay for the transaction).
+
+Constraints
+1≤N≤30
+1≤Q≤10^5
+1≤Ci≤10^5, ∀ 1≤i≤N
+∃i, for 1≤i≤N, Ci=1
+Ci≠Cj ∀i,j, i≠j
+1≤B≤10^18
+0≤Pi≤10^7, ∀ 1≤i≤N
+For each customer, 0≤(n=1∑N Ci∗Pi) − B≤10^5
+
+
+Output
+Output the least total number of the coins that the vending machine needs to give change back to each customer. Each line contains only a number for a customer.
+
+
+Sample Input 1 
+7
+1000 500 100 50 10 5 1 
+4
+50 0 0 0 1 0 0 0 
+35 0 0 0 0 4 0 0 
+80 0 0 0 1 2 1 5 
+75 0 0 1 0 0 0 0
+
+Sample Output 1
+0
+1
+0
+3
