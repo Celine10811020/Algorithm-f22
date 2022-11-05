@@ -9,11 +9,11 @@
 
 int main()
 {
-    //¤@ºû°ÊºA°}¦C
+    //ä¸€ç¶­å‹•æ…‹é™£åˆ—
         int *arrOne;
         arrOne = (int*)malloc(sizeof(int)*num);
 
-    //¤Gºû°ÊºA°}¦C
+    //äºŒç¶­å‹•æ…‹é™£åˆ—
         int **arrTwo;
         arrTwo = (int**)malloc(sizeof(int*)*row);
         for(i=0; i<row; i++)
@@ -23,24 +23,24 @@ int main()
 
 
     //C++
-        std::sort(arr, arr+10);
+        std::sort(arr, arr+);
         std::sort(std::begin(arr), std::end(arr));
 
-        std::nth_element(arr, arr+temp, arr+num); //§ä¥Xarr¤¤²Ätemp¤pªº¼Æ
+        std::nth_element(arr, arr+temp, arr+num); //æ‰¾å‡ºarrä¸­ç¬¬tempå°çš„æ•¸
 
 
     //C++, vector
         vector<int> vec;
         for(i=0; i<num; i++)
         {
-            vec.push_back(i); //¿é¤J­È¤Jvector
+            vec.push_back(i); //è¼¸å…¥å€¼å…¥vector
         }
 
-        vec(arr, arr+num); //±N°}¦C½Æ»s¨ìvector¸Ì­±
+        vec(arr, arr+num); //å°‡é™£åˆ—è¤‡è£½åˆ°vectorè£¡é¢
 
-        vec.clear(); //²MªÅvector
+        vec.clear(); //æ¸…ç©ºvector
 
-        //§ävector¸Ì­±ªº³Ì¤j­È»P³Ì¤p­È
+        //æ‰¾vectorè£¡é¢çš„æœ€å¤§å€¼èˆ‡æœ€å°å€¼
             auto upperBoundNum = upper_bound(v.begin(), v.end(), upperBound);
             auto lowerBoundNum = lower_bound(v.begin(), v.end(), lowerBound);
 
