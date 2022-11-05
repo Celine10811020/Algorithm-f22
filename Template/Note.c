@@ -23,7 +23,7 @@ int main()
 
 
     //C++
-        std::sort(arr, arr+);
+        std::sort(arr, arr+num);
         std::sort(std::begin(arr), std::end(arr));
 
         std::nth_element(arr, arr+temp, arr+num); //找出arr中第temp小的數
