@@ -1,0 +1,40 @@
+Anniversary Sales
+
+
+Description
+The department store is having an anniversary sale from October 1st to November 1st. You have already purchased N commodities. Now, you have a chance to receive a discount if you purchase kk more items and if the price of each of the k items is unique and not the same as the price of any of the N commodities. Suppose that items with any price are available in this department store. Calculate the least extra amount you need to pay to receive a discount.
+
+
+Input
+The first line contains a number N, indicating the number of commodities you have already purchased.
+The second line gives N integers n1, n2, ⋯, nN, indicating the price of the n-th commodity, respectively.
+The third line gives a number k, indicating the number of the extra items you need to purchase.
+
+Constraints:
+1≤N≤10^5
+0≤ni≤10^9 ∀i∈[1,N]
+1≤k≤10^8
+
+Output
+Output the least extra amount you need to pay to receive a discount.
+
+
+Sample Input 1 
+5
+1 4 25 10 25
+2
+
+Sample Output 1
+5
+
+Sample Input 2 
+2
+5 6
+6
+
+Sample Output 2
+25
+
+
+Hint
+In the sample1, you need to buy two more items with different prices. Since you already buy the commodity with one dollar, the least cost you need to pay for two more items is 2+3=5.
