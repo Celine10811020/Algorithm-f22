@@ -1,0 +1,30 @@
+Description
+In a company, the sales and financial departments share one conference room. The conference room is being reserved by N groups at different times. Generally, the conference rooms are allocated so that as many groups as possible can use them. If the time slots that the two groups intend to use overlap and end simultaneously, priority is given to the shorter time slot. What is the best way to allocate conference rooms according to this principle?
+
+
+Input
+The first line gives an integer N, which is the number of groups.In the following N lines, each line contains two numbers, Si and Fi, separated by a space.
+Si indicates the start time of the i-th group using the conference room.
+Fi indicates the finish time of the i-th group using the conference room.
+
+Constraints:
+1≤N≤10000
+0≤Si<Fi≤1000  ∀i∈[1,N].
+
+
+Output
+Chronologically list all the start times and finish times that the conference room is reserved.
+Each line contains the start time and the finish time of a group, separated by a single space.
+
+
+Sample Input 1 
+5
+0 10
+2 5
+3 20
+6 18
+12 16
+
+Sample Output 1
+2 5
+12 16
