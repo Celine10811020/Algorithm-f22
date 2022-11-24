@@ -1,0 +1,26 @@
+Description
+There will be a release of version 2 of the fighting game. As in the last fighting game, you have to fight your enemies constantly.
+However, the leveling-up rule is changed. Passing a level ii gives you a bonus bi so that you can go up at most bi levels.
+Please calculate the minimum number of levels you need to pass to reach the N-th level.
+Note that you begin on level 1.
+
+
+Input
+The first line contains a number N, indicating the number of levels.
+The second line gives N integers b1, b2, ⋯, bN, corresponding to the bonuses from level 1 to level N, respectively.
+
+Constraints:
+1≤N≤25000
+0≤bi≤100 ∀i∈[1,N]
+
+
+Output
+Output the minimum number of levels you need to pass to reach the N-th level.
+
+
+Sample Input 1 
+5
+2 3 1 1 4
+
+Sample Output 1
+2
