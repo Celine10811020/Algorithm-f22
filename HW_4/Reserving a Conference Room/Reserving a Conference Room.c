@@ -23,7 +23,7 @@ int main()
         scanf("%d", &start[i]);
         scanf("%d", &end[i]);
       	
-        //jianZhaDeZhuJiao, youYiBiCeZiShi start[i]==end[i]
+        //某一筆測資是 start[i]==end[i]
       	if(start[i] == end[i])
         {
             debug = start[i];
