@@ -1,0 +1,30 @@
+Description
+A TOEIC test will be held on November 13th. Tens of thousands of people have already applied for the test, but there are only two exam rooms (Exam Room A and Exam Room B). The organizer needs to assign exam rooms to these examinees according to their cost of arriving at Exam Room A or Exam Room B. Each room can accommodate exactly half of the examinees. Can you help the organizer to assign the exam rooms such that the total cost of all examinees are minimal?
+
+
+Input
+The first line gives an integer N, which is the number of examinees.
+In the following N lines, each line gives two numbers, Costia and Costib, separated by a single space.
+Costia indicates the cost of the i-th examinee arriving at Exam Room A.
+Costib indicates the cost of the i-th examinee arriving at Exam Room B.
+
+Constraints:
+2≤N≤10000
+N is an even number.
+1≤Costia≤1000  ∀i∈[1,N].
+1≤Costib≤1000  ∀i∈[1,N].
+
+
+Output
+Output the minimum total cost of the N examinees.
+
+
+Sample Input 1 
+4
+10 20
+30 200
+400 50
+30 20
+
+Sample Output 1
+110
