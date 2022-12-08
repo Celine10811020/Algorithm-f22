@@ -1,0 +1,40 @@
+Description
+It is February 24, 2022, at 6 A.M. Thirty minutes ago, the troop commander woke you and your comrades up urgently and asked you all to get prepared for the upcoming mission. At first, you thought this was just another boring drill again, for it was the daily routine of the last seven months. However, soon you realized that this time is not a drill anymore, because your mission is to parachute to somewhere near Kyiv, Ukraine, and take over the airport there for the follow-up military operation.
+Now you are high in the sky because you just jumped out of an IL-76, a military transport aircraft. Thanks to your incredible eyesight, you can see the situation on the ground even without sufficient light. Your visible range of the ground is presented by l×l grids, and you are in the sky of the center grid. If l is even, there are four grids near the center and the bottom-right one is selected as the center grid.
+Finding a safe place to land is your top priority. Based on what you have learned before, to reduce the risk of being discovered, you should land in a grass field surrounded by trees. Grass and trees are two types of grids, and several adjacent grids of grass type are viewed as a grass field. You can assume that outside the visible l×l grids are all trees.
+Today's winds are variable, which makes it difficult to land at a particular place. But since you are well trained, you can estimate a range of grids (represented by r) that you will possibly land. All grids that are not more than r grids away from your current position (i.e., the center grid) are your possible landing grids. For example, if r=0, there is only one gird (your current position); if r=1, there are nine grids (top, top-left, left, bottom-left, bottom, bottom-right, right, top-right, and center) in total.
+According to the l×l grids and your estimation rr, give the area of the largest grass field that you will possibly land.
+
+
+Input
+The first line contains one integer N, indicating there are N possible landing sites.
+The successive lines explain the information about each landing site.
+For each landing site, the first line contains two integers l and r, where l is the length and width of your visible range of the ground and r is the estimated range that you will possibly land. Then there are l lines, each of which contains l characters, describing the geography of the landing site. A character could be _ or ^, where _ and ^ indicate a grass grid and a tree grid, respectively.
+
+1≤l≤7000
+0≤r<⌊(l+1)/2⌋
+
+
+Output
+For each landing site, output the area of the largest grass field (in terms of the number of grids) you will possibly land.
+
+
+Sample Input 1 
+3
+4 1
+^^^^
+^_^_
+^^__
+^^^^
+2 0
+^^
+^_
+3 0
+^_^
+_^_
+^_^
+
+Sample Output 1
+3
+1
+0
