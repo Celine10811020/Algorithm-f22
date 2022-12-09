@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void mergeSortCost(int head, int tail);
 void mergeCost(int head, int mid, int tail);
