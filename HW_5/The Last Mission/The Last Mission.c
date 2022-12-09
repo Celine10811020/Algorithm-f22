@@ -17,7 +17,7 @@ int main()
 {
     int i, j, k, m;
     int temp, max, one, two;
- 	int num;
+    int num;
     int possible, landmark;
     int center, leftTop;
 
@@ -124,7 +124,7 @@ int main()
 
 void countArea(int one, int two, int recursive)
 {
-    if(recursive > 100000) //recursive �Ӧh�|�X��
+    if(recursive > 100000) //recursive ¤Ó¦h·|¥X¨Æ
     {
         landOne[pointEnd] = one;
         landTwo[pointEnd] = two;
@@ -175,7 +175,7 @@ void countArea(int one, int two, int recursive)
 
 void labelArea(int one, int two, int recursive)
 {
-    if(recursive > 100000) //recursive �Ӧh�|�X��
+    if(recursive > 100000) //recursive ¤Ó¦h·|¥X¨Æ
     {
         landOne[pointEnd] = one;
         landTwo[pointEnd] = two;
