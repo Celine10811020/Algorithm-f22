@@ -124,7 +124,7 @@ int main()
 
 void countArea(int one, int two, int recursive)
 {
-    if(recursive > 100000) //recursive ¤Ó¦h·|¥X¨Æ
+    if(recursive > 100000) //recursive 太多會出事
     {
         landOne[pointEnd] = one;
         landTwo[pointEnd] = two;
@@ -175,7 +175,7 @@ void countArea(int one, int two, int recursive)
 
 void labelArea(int one, int two, int recursive)
 {
-    if(recursive > 100000) //recursive ¤Ó¦h·|¥X¨Æ
+    if(recursive > 100000) //recursive 太多會出事
     {
         landOne[pointEnd] = one;
         landTwo[pointEnd] = two;
