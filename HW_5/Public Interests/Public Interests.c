@@ -14,7 +14,6 @@ int nodeLabel[500];
 int nodeRumor[500];
 int nodeNext[500];
 int graph[500][500];
-int result[500];
 
 int main()
 {
@@ -23,7 +22,6 @@ int main()
     int node, edge, rumor;
     int start, end, label, now;
     int planOne, planTwo;
-    int index = 0;
 
     while(scanf("%d", &node) != EOF)
     {
