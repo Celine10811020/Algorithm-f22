@@ -1,0 +1,46 @@
+Description
+Two weeks ago, a detailed proposal for MRT expansion was submitted to the review committee as required. In yesterday's session, although almost every committee member praised this plan for its economical efficiency, they all voted against it for various excuses in the end.
+As the person in charge of this plan, Chung-Yi could not understand what caused this result, so he decided to ask his leader, Dr. You, for advice. After Dr. You heard about the ins and outs, he said this to Chung-Yi: "You are too young, too simple, and sometimes naïve."
+Dr. You then pointed out that these "compliments" were not in fact "compliments"---they were "compliments" just because they had to be "compliments"---, and told Chung-Yi to secretly inquire about the background of these committee members. Dr. You said that the key to getting the expansion plan approved lay behind this.
+Chung-Yi came home and thought many times about what Dr. You said to him. He then set out to investigate these committee members and discovered that each committee member was related to an elected official indirectly. Chung-Yi dug deeper and found these elected officials all had one thing in common, that is, their family members were rumored to own real estate near some particular expected locations of new MRT stations.
+There was a dilemma for Chung-Yi. If he wanted to have his plan to get approval, he must give up the MRT routes which had the minimum cost among all the other options. However, if Chung-Yi adopted another plan which would definitely cost more money, he would feel guilty about the taxpayers.
+He was hesitating for a while, but later a fallacy came to his mind: "Since these elected officials are elected by their electors, even if elected officials benefit unjustly from this plan, from a certain point of view, their electors also gain profits because these electors are represented by elected officials."
+After getting this conclusion, Chung-Yi felt much better and started to revise his proposal. Now he decides to give two plans for the MRT routes. The first plan is straightforward, it uses the minimum connections to connect all new MRT stations but at the maximum cost. The second plan is a little bit sophisticated: it has to have as many connections as possible for those MRT stations related to the rumors, and based on this precondition, this plan connects the remaining MRT stations at the minimum cost.
+If the cost of the first plan is greater than the second one, then Chung-Yi can use the first plan to increase people's mindset of the expected cost of the MRT expansion and thus give the excuse for the committee to pass the second one. If someone questions whether there is a cheaper plan or not, the committee can claim that the second plan is the most advantageous, for it provides various routes for commuters and tourists to choose from.
+Because Chung-Yi knows that you are taking a course on algorithms, he asks you to find out whether his idea is feasible or not according to the graphs he provides. If you cannot answer correctly, Chung-Yi will not give you any score for this problem.
+
+
+Input
+There will be several cases.
+For each case, the first line contains three integers v, e, and s. v is the number of new MRT stations, ee is the number of connections between two stations, and s is the number of rumored stations. Then e lines follow. Each of the e lines contains three integers a, b, and c, indicating the expected cost of the connection between station a and station b is c. Finally, there are ss lines. Each of the s lines contains an integer i, representing the index of a rumored station. Stations are 0-indexed.
+The input ends with an EOF.
+
+1≤v≤500
+0≤e≤v(v−1)/2
+​1≤s≤v
+
+
+Output
+For each case, output the result of c1 - c2, where c1 is the cost of the first plan and c2 is the cost of the second plan. If the given input cannot form the required plans, output "no". You can assume the result can be represented by a 32-bit integer.
+
+
+Sample Input 1 
+4 5 1
+0 1 1
+1 2 100
+2 3 1
+3 1 2
+0 3 1
+3
+3 1 1
+1 2 100
+1
+
+Sample Output 1
+99
+no
+
+
+Hint
+If you cannot answer correctly, Chung-Yi will not give you any score for this problem.
+Actually, you will get some scores if you pass some test cases. The quoted sentence is only to create an atmosphere for you to bring into. Do not take it seriously.
