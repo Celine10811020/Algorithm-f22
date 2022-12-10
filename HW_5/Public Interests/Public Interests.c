@@ -97,11 +97,6 @@ int main()
             continue;
         }
 
-      	for(i=1; i<node; i++)
-        {
-          if(nodeLabel[i-1] != nodeLabel[i]) return -1;
-        }
-
         //put node into different set
         for(i=0; i<node; i++)
         {
