@@ -1,0 +1,42 @@
+Description
+Mohenjo-Daro, Pakistan, is rumored to have had an ancient atomic war about 4000 years ago, which led to the destruction of this civilization. In recent several months, the world has become much unsafer. On October 7, United States President Joe Biden said, "The risk of nuclear Armageddon is at the highest level since the 1962 Cuban Missile Crisis." It reminds us that the world we live in is in turmoil.
+Nate and Nora are doomsday preppers. They fell in love after meeting each other at a preppers' gathering. Since then, they are more concerned about their safety. Nate and Nora start to organize their prepper friends and plan to build several fallout shelters in case of a nuclear war.
+Every participant is assigned a task. Some people are responsible for secretly constructing underground shelters, some people are responsible for installing Geiger-Müller counters in major locations, some people are responsible for preparing living supplies, and some people are responsible for buying anti-radiation drugs.
+Anti-radiation drugs are important because these shelters are located in remote areas such as high mountains. Once mushroom clouds rise on the ground, because almost everyone lives in cities, it will take some time to arrive at one of the fallout shelters. To prevent the harm of exposure to nuclear radiation, it is crucial to intake some anti-radiation drugs.
+Potassium iodide tablets can block radioactive iodine (I-131) to be absorbed by the thyroid; Prussian blue capsules can inhibit the absorption of radioactive cesium (Cs-137); pentetic acid injections can bind to radioactive plutonium (Pu), americium (Am), and curium (Cm) to reduce the time they remain the human body.
+However, the best way to avoid radioactive poisoning is not to expose to radiation for too long. Nate and Nora decide to write a program to report the smallest cumulative radiation dose among all possible paths to shelters according to the measured radiation dose from all Geiger-Müller counters so that all users of this program can know whether they have the chance to live or not when the nuclear war comes.
+
+
+Input
+There will be several cases.
+For each case, the first line contains three integers l, r, and s. l is the number of locations (cities and shelters), r is the number of roads, and s is the number of shelters. Then there is a single line of l non-negative integers separated by spaces---the first integer is the measured radiation dose of location 0, the second integer is the measured radiation dose of location 1, etc. After that, there are r lines that follow. Each of the r lines contains three integers a, b, and c, indicating the estimated radiation dose of choosing the road between location a and location b is c. Then there is a single line containing ss different integers separated by spaces, indicating the indexes of shelters in the location list. Finally, there is a single line of an integer, indicating the starting location. Locations are 0-indexed.
+
+The input ends with an EOF.
+
+2≤l≤10000
+0≤r≤l*log2(l)
+1≤s≤log2(l)
+
+
+Output
+For each case, output the cumulative radiation dose that satisfies the requirement. If it is impossible to arrive at any shelters, output −1. You can assume that the output can be represented by a 32-bit integer.
+
+
+Sample Input 1 
+4 4 1
+4 8 3 2
+1 0 2
+2 0 1
+3 2 3
+3 1 2
+3
+1
+3 1 1
+1 2 3
+0 2 7
+1
+0
+
+Sample Output 1
+12
+-1
