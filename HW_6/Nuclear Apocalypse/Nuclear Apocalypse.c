@@ -74,7 +74,7 @@ int main()
         {
             temp = graph[now][0];
 
-            //§ó·snode¸ê°T
+            //æ›´æ–°nodeè³‡è¨Š
             for(i=1; i<temp; i++)
             {
                 tempNext = graph[now][i];
