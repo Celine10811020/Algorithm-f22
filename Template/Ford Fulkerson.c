@@ -41,7 +41,7 @@ while(goOn)
 
 int bfs(int node, int nodeS, int nodeT)
 {
-  int i, j;
+  int i;
   int now;
   int start = 0;
   int end = 0;
@@ -57,15 +57,15 @@ int bfs(int node, int nodeS, int nodeT)
   nodePath[now] = -1;
   while(1)
   {
-    for(j=0; j<node; j++)
+    for(i=0; i<node; i++)
     {
-      if((graph[now][j]-flow[now][j]) > 0)
+      if((graph[now][i]-flow[now][i]) > 0)
       {
-        if(nodeLabel[j] == 0)
+        if(nodeLabel[i] == 0)
         {
-          nodeLabel[j] = 1;
-          nodeNext[end] = j;
-          nodePath[j] = now;
+          nodeLabel[i] = 1;
+          nodeNext[end] = i;
+          nodePath[i] = now;
           end++;
         }
       }
