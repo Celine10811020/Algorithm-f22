@@ -1,9 +1,9 @@
 //ford fulkerson
-for(k=0; k<node; k++)
+for(i=0; i<node; i++)
 {
-  for(m=0; m<node; m++)
+  for(j=0; j<node; j++)
   {
-    flow[k][m] = 0;
+    flow[i][j] = 0;
   }
 }
 
@@ -13,12 +13,12 @@ goOn = bfs(node, nodeS, nodeT);
 while(goOn)
 {
   increment = 2147483647;
-  
-  for(k=node-1; nodePath[k]>=0; k=nodePath[k])
-  {
-    nodePrevious = nodePath[k];
 
-    temp = graph[nodePrevious][k] - flow[nodePrevious][k];
+  for(i=node-1; nodePath[i]>=0; i=nodePath[i])
+  {
+    nodePrevious = nodePath[i];
+
+    temp = graph[nodePrevious][i] - flow[nodePrevious][i];
 
     if(temp < increment)
     {
@@ -26,12 +26,12 @@ while(goOn)
     }
   }
 
-  for(k=node-1; nodePath[k]>=0; k=nodePath[k])
+  for(i=node-1; nodePath[i]>=0; k=nodePath[i])
   {
-    nodePrevious = nodePath[k];
+    nodePrevious = nodePath[i];
 
-    flow[nodePrevious][k] = flow[nodePrevious][k] + increment;
-    flow[k][nodePrevious] = flow[k][nodePrevious] - increment;
+    flow[nodePrevious][i] = flow[nodePrevious][i] + increment;
+    flow[i][nodePrevious] = flow[i][nodePrevious] - increment;
   }
 
   //Adding the path flows
