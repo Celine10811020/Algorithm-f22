@@ -26,7 +26,7 @@ while(goOn)
     }
   }
 
-  for(i=node-1; nodePath[i]>=0; k=nodePath[i])
+  for(i=node-1; nodePath[i]>=0; i=nodePath[i])
   {
     nodePrevious = nodePath[i];
 
