@@ -1,4 +1,4 @@
-//®t¤@µ§WAªºPAC
+//å·®ä¸€å€‹WAçš„PAC
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
