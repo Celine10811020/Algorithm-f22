@@ -1,0 +1,45 @@
+Description
+The concept of six degrees of separation originated from a story written by the Hungarian author Frigyes Karinthy in 1929. It states that any two people in the world can connect through a chain of friends with a length not exceeding six.
+Over decades, people's lifestyle has changed significantly. In the Information Age, people make friends on social media, chat on social media, share their daily life on social media, and so on. Analyzing these data can tell us many interesting facts, including whether the notion of six degrees of separation is correct.
+An article¹ published in 2016 on Meta Research's blog revealed that in the Facebook friend graph, each individual can reach every other individual by 3.57 intermediate people.
+However, it is 2022, and Facebook is getting out of fashion. You are curious about what is the actual number of degrees of separation of Facebook now. After searching all possible keyword combinations on the Internet, you do not find any research about it.
+But this is not a big problem, as a low-key and talented hacker studying at NYCU, you decide to break into Meta's servers and download Facebook users' data to find the answer by yourself. Although you have to take the risk of being sentenced to at most five years in prison for violating Article 359 of the Criminal Code of the Republic of China, such a risk is not worth mentioning for you because you are very confident in your hacker skills.
+Now you have utilized several zero-day vulnerabilities to gain permission to access Meta's servers. While downloading data from these servers, you start to develop a program that can find the smallest integer nn, satisfying that each individual can reach every other individual within nn intermediate people according to the input graph.
+
+¹https://research.facebook.com/blog/2016/2/three-and-a-half-degrees-of-separation/
+
+
+Input
+There will be several cases.
+For each case, the first line contains an integer e, which is the number of friendships, followed by e lines. Each of the e lines contains two names a and b, indicating a and b are friends.
+
+The input ends with an EOF.
+
+Let v represent the total number of distinct names of a case.
+
+2≤v≤500
+1≤e≤v(v−1)/2
+​
+
+Output
+Output the nn for each case. If there is no such nn that satisfies the condition, output −1.
+
+
+Sample Input 1 
+4
+Mu-En Ting-Kuan
+Ting-Kuan Chung-Yi
+Chung-Yi Chia-Yang
+Chia-Yang Mu-En
+3
+a b
+b c
+a d
+2
+N Y
+C U
+
+Sample Output 1
+2
+3
+-1

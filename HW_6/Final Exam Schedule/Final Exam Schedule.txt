@@ -1,0 +1,38 @@
+Description
+Organizing exams that are not in class time is always troublesome because some students have many extracurricular activities and cannot attend the exam at the appointed time. TAs thus have to organize another makeup exam.
+However, as a TA, I am not here to complain about someone, but instead, I feel this can be an interesting problem for you to solve.
+Assume that TAs provide several time slots for the final exam, and all exams held in different time slots use the same classroom. Each student can only attend the final exam once. If TAs ask all students to list their available time slots, TAs can find a minimum combination of time slots needed for holding the final exam by exhaustively searching all possible combinations.
+You will be first given the total number of time slots and all students' available time slots, and then you will be given different combinations of time slots. Your job is to find the minimum number of students that cannot attend the final exam for each combination.
+
+
+Input
+There will be several cases.
+For each case, the first line contains four integers n, m, c, and r. n is the number of time slots, m is the number of students, c is the capacity of the classroom, and r is the number of combinations. Then, there are m lines describing the available time slots of the m students. Each of the m lines contains 2+t integers separated by spaces. The first integer a is the index of a student, the second integer t is the number of the available time slots of the student, and the remaining t unique integers are the indexes of the available time slots of the student. After that, there are r lines describing the r combinations of time slots. Each of the r lines contains 1+u integers separated by spaces. The first integer u indicates the number of time slots of a combination, and the remaining u unique integers indicate the indexes of the time slots of the combination. Time slots and students are 0-indexed.
+
+The input ends with an EOF.
+
+1≤n≤1000
+1≤m≤1000
+11≤c≤nm
+0≤t≤n
+1≤u≤n
+1≤r≤min(n,10)
+
+
+Output
+For each case, output the minimum number of students that cannot attend the final exam for each combination of time slots.
+
+
+Sample Input 1 
+2 5 3 2
+0 1 0
+1 2 0 1
+2 2 0 1
+3 1 1
+4 1 0
+1 0
+2 0 1
+
+Sample Output 1
+2
+0
