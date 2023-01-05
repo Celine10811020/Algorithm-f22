@@ -1,0 +1,38 @@
+Description
+Given an mxn 2D binary grid, which represents a map of '1's (land) and '0's (water), return the number of islands.
+
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+
+
+Input
+The first line contains two numbers, m and n.
+The successive m lines describe the content of the 2D binary grid, and each line contains n binary digits.
+
+Constraints:
+1≤n,m≤300
+character is either '0' or '1'
+
+
+Output
+Output the number of islands.
+
+
+Sample Input 1 
+4 5
+11110
+11010
+11000
+00000
+
+Sample Output 1
+1
+
+Sample Input 2 
+4 5
+11000
+11000
+00100
+00011
+
+Sample Output 2
+3

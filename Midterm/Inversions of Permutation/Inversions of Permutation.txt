@@ -1,0 +1,23 @@
+Description
+An inversion (i, j) is a pair of a permutation (s1, s2, s3, …, sn) that satisfies i<j and si>sj.
+For example, the permutation (3,2,1) has three inversions (1,2), (1,3), and (2,3). Given a permutation, find the number of inversions of it.
+
+
+Input
+There will be several cases.
+Each case contains two lines. The first line contains one integer n, indicating the length of a permutation of the set {1,2,3,…,n}. The second line contains nn integers that form the permutation.
+The input ends with an EOF.
+
+1≤n≤500,000
+
+
+Output
+Output the number of inversions for each case.
+
+
+Sample Input 1 
+3
+3 2 1
+
+Sample Output 1
+3

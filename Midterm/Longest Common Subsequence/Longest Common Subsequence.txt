@@ -1,0 +1,21 @@
+Description
+Given two strings A, B, output the length of the longest common subsequence of both strings.
+
+
+Input
+The first line contains string A, and the second line contains string B, where A, B are the given two strings.
+
+Constraints:
+1≤∣A∣,∣B∣≤1000
+
+
+Output
+Output the length of the longest common subsequence of both strings.
+
+
+Sample Input 1 
+aabbccdd
+afbcdd
+
+Sample Output 1
+5

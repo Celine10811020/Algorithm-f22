@@ -1,0 +1,32 @@
+Description
+You have n dice and each die has k faces numbered from 1 to k.
+Given three integers n, k, and target, return the number of possible ways (out of the k^n total ways) to roll the dice, so the sum of the face-up numbers equalstarget.
+Since the answer may be too large, return it modulo 10^9 + 7
+
+
+Input
+The first line contains two numbers n and k,respectively.
+The second line contains a numbertarget.
+
+Constraints:
+1≤n,k≤30
+1≤target≤1000
+
+
+Output
+Print the number of possible ways to roll the dice, so the sum of the face-up number equalstarget.
+
+
+Sample Input 1 
+1 6
+3
+
+Sample Output 1
+1
+
+Sample Input 2 
+2 6
+7
+
+Sample Output 2
+6
